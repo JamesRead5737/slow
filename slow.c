@@ -20,7 +20,6 @@
 #include <netinet/in.h>
 #include <curl/curl.h>
 #include <ctype.h>
-#include <wget.h>
 #include <hiredis/hiredis.h>
 
 #define MSG_OUT stdout
