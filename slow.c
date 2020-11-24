@@ -550,8 +550,13 @@ new_body_conn(char *url, GlobalInfo *g)
 	}
 
 	if (!autoresolve) {
-		snprintf(buffer1, 1024, "%s:443:%s", url, ip); 
-		snprintf(buffer2, 1024, "%s:80:%s", url, ip); 
+		int length1, length2;
+
+		length1 = strlen(host) + strlen(":443:") + strlen(ip) + 1;
+		length1 = strlen(host) + strlen(":80:") + strlen(ip) + 1;
+
+		snprintf(buffer1, length1, "%s:443:%s", host, ip); 
+		snprintf(buffer2, length2, "%s:80:%s", host, ip); 
 
 		free(ip);
 		free(host);
